@@ -4,8 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My_First_Vue</title>
+
+    <!-- 引入 VUE 文件 -->
+     <!-- 注册了一个全局变量  -->
+
+    <script src="../js/vue.min.js"></script>
 </head>
-<body>
+<body> 
+    <div id="app"></div>
+    <script> 
+    // 第一步: 创建 Vue 实例
+    // 关于 Vue 构造函数的参数 : options ? 
+    // options 必须是一个纯粹的 JS 对象 
+    // 在 {} 对象中可以配置大量的 Key : Value 对儿. 一个对儿就是一个配置项
+    /* 关于 template: 模版 
+       用来指定模版语句, 模版语句时一个字符串形式
+       是 Vue 自己搞的一套 模版规则
+       我们写 Vue 模版语句的时候不能乱写, 要遵守Vue 的模版语句规则 
+       其可以是纯粹的 HTML 代码, 也可以是 Vue 中的特殊规则, 也可以是 HTML + Vue 的特殊规则  
+
+    */
+
+        let options = {
+            template : '<h1> Hello Vue! </h1>'
+        }
+
+        const myVue = new Vue(options)
+
+        // 第二步:  
+        /* 
+        1. Vue 实例都有一个 $mount() 方法, 这个作用是, 将 Vue 挂载到指定位置上  
+        2. 将 Vue 实例挂在 id = ‘app’ 的位置上  <div id="app"></div> 
+        3. #app 明显是 id 选择器, 明显借鉴了 CSS 
+        4. documen.getElementById 也是可以的 
+        5. template 后面的模版语句会被 Vue 框架的编译器转换成能够识别纯粹的 HTML 代码
+        */
+        myVue.$mount('#app')
+
+    </script>
     
 </body>
 </html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模版语句的数据来源</title> 
+
+    <!--  安装 Vue -->
+      <script src="../js/vue.min.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+
+    <!-- Vue 程序 -->
+     <script> 
+          /*
+          1. 模板语句的数据来源 data 选项 
+          2. data 选项的类型可以是什么呢? Object | Function (对象或者函数) API 
+          3. data 实际上是给整个 Vue 实例来提供数据来源 
+          4. 用 {{}} 这个是 Vue 框架自己的一套语法, 这种语法在 Vue 框架中被称为: 模版语句的差值语法或者胡子语法
+          5. 怎么用? {{data 的key}}
+
+     */
+        const myVue = new Vue({
+            template : "<h1> 我最喜欢的电影之一是:{{name}}, <br> 它的上映时间是: {{releasedTime}} <br> 导演是: {{director.name}} </h1> ", 
+            // data 里可以写大量的 Key Value 对儿
+            data : { 
+                name : "LALALand",
+                releasedTime: "2002-10-15", 
+                director: {name: "zidi",
+                       age : 22 
+                },
+                actor : [
+                    { name: "janice",
+                        age: 21
+
+                    },
+                    {
+                        name: "stella",
+                        age: 20
+
+                    }
+                ]
+
+            }
+        }) 
+        myVue.$mount("#app")
+
+     </script>
+    
+</body>
+</html>

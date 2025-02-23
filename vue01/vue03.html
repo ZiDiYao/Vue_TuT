@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>template 配置项详解</title> 
+
+    <script src="../js/vue.min.js"></script>
+</head>
+<body> 
+
+    <!-- 可以不使用 Template, 直接写在标签中  -->
+
+    <div id="app"> <div><h1>{{msg}}</h1> <h1>Hello</h1></div>,</div> 
+
+    <script> 
+    /*  
+    关于 template 配置 
+    1. 只能有一个根结点 <h1></h1>
+    2. 当 data 中的数据发生变化, 模版语句就一定会重新编译 
+    3. 只要 data 变, template 就会重新编译, 重新渲染
+
+
+    */
+
+        new Vue({ 
+            data:{
+                msg: "Hello Vue !!!"
+            }
+
+        }).$mount("#app")
+
+
+
+    </script>
+    
+</body>
+</html>
