@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>template 配置项详解</title> 
+    <title>Vue 一夫一妻</title> 
 
     <script src="../js/vue.min.js"></script>
 </head>
@@ -12,6 +12,12 @@
     <!-- 可以不使用 Template, 直接写在标签中  -->
 
     <div id="app"> <div><h1>{{msg}}</h1> <h1>Hello</h1></div>,</div> 
+    <div class="app"></div>
+    <div class="app"></div> 
+    <!-- 一个 Vue 实例只能接管一个容器, 一旦接管到容器后, 即使后面有相同的容器, Vue 也不管 --> 
+
+
+    <!-- 两个 Vue 实例去管理一个容器也是不被允许的 -->
 
     <script> 
     /*  

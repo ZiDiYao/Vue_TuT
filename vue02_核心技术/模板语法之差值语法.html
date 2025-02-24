@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模板语法之差值语法{{}}</title>
+    <!-- 引入 Vue -->
+    <script src="../js/vue.min.js"></script>
+</head>  
+<body>  
+    <!-- 主要研究 {{}} 这里可以写什么?  
+     1. 在 data 中声明的, 无论是什么都可以往这里写
+     2. 但是, 在全局声明的不可以, 只有在 data 里声明的才可以 
+     3. 常量可以, 直接写在 {{3.1415926}} 里面
+     4. 只要是合法的 JS 表达式就可以  {{1+1}} -> {{2}} 或者字符串拼接等等. 或者 data 里的 + 上常量 
+     5. 
+     
+    
+    
+    
+    --> 
+     <div id="app">
+        <h1>{{msg}}</h1> 
+        <h1>{{sayHello()}}</h1>
+     </div>
+
+     <script>
+
+        new Vue({ 
+            el: '#app',
+            data:{
+                msg:'abcdef',
+                sayHello : function(){
+                    console.log('hello vue !')
+                }
+            }
+        })
+
+
+
+
+     </script>
+    
+</body>
+</html>
